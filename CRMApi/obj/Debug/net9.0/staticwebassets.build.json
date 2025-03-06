@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "AahR2tKBXfsmdy6FPX174DjAOVpbTG+M/zc+ZkmCdeo=",
+  "Source": "CRMApi",
+  "BasePath": "_content/CRMApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
