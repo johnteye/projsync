@@ -173,7 +173,7 @@ namespace CRMApi.Controllers
                     ClientName = NewProject.ClientName,
                     Description = NewProject.Description,
                     DevelopersAssigned = NewProject.DevelopersAssigned,
-                    Status = (ProjectStatus?)(int)NewProject.Status
+                    Status = (ProjectStatus?)(int)NewProject.Status 
                 });
 
             }

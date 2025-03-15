@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Son Of Man\\Desktop\\C# APIs\\CRMApi\\CRMApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B9EFB9DA-8B55-4664-9C81-97A1255A7806}|CRMApi\\CRMApi.csproj|c:\\users\\son of man\\desktop\\c# apis\\crmapi\\crmapi\\crmapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9EFB9DA-8B55-4664-9C81-97A1255A7806}|CRMApi\\CRMApi.csproj|solutionrelative:crmapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9EFB9DA-8B55-4664-9C81-97A1255A7806}|CRMApi\\CRMApi.csproj|c:\\users\\son of man\\desktop\\c# apis\\crmapi\\crmapi\\crmapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9EFB9DA-8B55-4664-9C81-97A1255A7806}|CRMApi\\CRMApi.csproj|solutionrelative:crmapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9EFB9DA-8B55-4664-9C81-97A1255A7806}|CRMApi\\CRMApi.csproj|c:\\users\\son of man\\desktop\\c# apis\\crmapi\\crmapi\\crmapi\\controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9EFB9DA-8B55-4664-9C81-97A1255A7806}|CRMApi\\CRMApi.csproj|solutionrelative:crmapi\\controllers\\projectcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9EFB9DA-8B55-4664-9C81-97A1255A7806}|CRMApi\\CRMApi.csproj|c:\\users\\son of man\\desktop\\c# apis\\crmapi\\crmapi\\crmapi\\domain\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9EFB9DA-8B55-4664-9C81-97A1255A7806}|CRMApi\\CRMApi.csproj|solutionrelative:crmapi\\domain\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProjectController.cs",
+              "DocumentMoniker": "C:\\Users\\Son Of Man\\Desktop\\C# APIs\\CRMApi\\CRMApi\\CRMApi\\Controllers\\ProjectController.cs",
+              "RelativeDocumentMoniker": "CRMApi\\Controllers\\ProjectController.cs",
+              "ToolTip": "C:\\Users\\Son Of Man\\Desktop\\C# APIs\\CRMApi\\CRMApi\\CRMApi\\Controllers\\ProjectController.cs",
+              "RelativeToolTip": "CRMApi\\Controllers\\ProjectController.cs",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAuwK8AAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T00:49:16.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Son Of Man\\Desktop\\C# APIs\\CRMApi\\CRMApi\\CRMApi\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "CRMApi\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Son Of Man\\Desktop\\C# APIs\\CRMApi\\CRMApi\\CRMApi\\Controllers\\UserController.cs",
+              "RelativeToolTip": "CRMApi\\Controllers\\UserController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAUwCgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-15T00:25:05.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserDTO.cs",
+              "DocumentMoniker": "C:\\Users\\Son Of Man\\Desktop\\C# APIs\\CRMApi\\CRMApi\\CRMApi\\Domain\\DTOs\\UserDTO.cs",
+              "RelativeDocumentMoniker": "CRMApi\\Domain\\DTOs\\UserDTO.cs",
+              "ToolTip": "C:\\Users\\Son Of Man\\Desktop\\C# APIs\\CRMApi\\CRMApi\\CRMApi\\Domain\\DTOs\\UserDTO.cs",
+              "RelativeToolTip": "CRMApi\\Domain\\DTOs\\UserDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T16:36:13.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Son Of Man\\Desktop\\C# APIs\\CRMApi\\CRMApi\\CRMApi\\Program.cs",
+              "RelativeDocumentMoniker": "CRMApi\\Program.cs",
+              "ToolTip": "C:\\Users\\Son Of Man\\Desktop\\C# APIs\\CRMApi\\CRMApi\\CRMApi\\Program.cs",
+              "RelativeToolTip": "CRMApi\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-09T23:10:30.694Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
