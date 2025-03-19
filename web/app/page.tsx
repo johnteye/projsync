@@ -1,7 +1,10 @@
+import Homepage from "@/components/Homepage"
+
 export default function Home() {
   return (
-    <h1 className="text-3xl font-bold underline text-green-600 bg-amber-600">
-      Hello world!
-    </h1>
+    <div className="w-screen h-screen flex justify-center">
+      <Homepage />
+    </div>
+    
   )
 }
