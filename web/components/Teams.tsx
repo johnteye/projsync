@@ -1,5 +1,5 @@
 import React from "react";
-import { IoAddOutline, IoSearch } from "react-icons/io5";
+import { IoAddOutline } from "react-icons/io5";
 import TeamsTable from "@/components/TeamsTable"
 
 const Teams = () => {
