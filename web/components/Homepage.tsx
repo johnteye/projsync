@@ -3,6 +3,7 @@ import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 import Teams from "./Teams";
 import Projects from './Projects'
+import ProjectInfo from "./ProjectInfo";
 
 const Homepage = () => {
   return (
@@ -13,7 +14,7 @@ const Homepage = () => {
       <div className="w-full sm:w-[80%] bg-gray-100 p-4">
         <Navbar />
         <div className="bg-white p-5 mt-10">
-          <Projects />
+          <ProjectInfo />
         </div>
       </div>
     </div>

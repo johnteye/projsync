@@ -1,6 +1,6 @@
 import React from "react";
 import { IoAddOutline } from "react-icons/io5";
-import Project from "./Project";
+import ProjectCard from "./ProjectCard";
 import { IoSearch } from "react-icons/io5";
 
 const Projects = () => {
@@ -29,15 +29,15 @@ const Projects = () => {
         </button>
       </div>
       <div className="grid grid-cols-4 gap-4">
-        <Project />
-        <Project />
-        <Project />
-        <Project />
-        <Project />
-        <Project />
-        <Project />
-        <Project />
-        <Project />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
+        <ProjectCard />
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import Image3 from "@/public/project-card3.svg";
 import Image4 from "@/public/project-card4.svg";
 import Image from 'next/image';
 
-const Project = () => {
+const ProjectCard = () => {
   return (
     <div className='w-60 h-44 border rounded-2xl p-4'>
         <div className='flex items-center justify-between mb-9'>
@@ -30,4 +30,4 @@ const Project = () => {
   )
 }
 
-export default Project
+export default ProjectCard
