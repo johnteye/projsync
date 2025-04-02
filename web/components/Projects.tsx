@@ -30,15 +30,33 @@ const Projects = () => {
         </button>
       </div>
       <div className="grid grid-cols-4 gap-4">
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+        <Link href={"/project"}>
+          <ProjectCard />
+        </Link>
+        <Link href={"/project"}>
+          <ProjectCard />
+        </Link>
+        <Link href={"/project"}>
+          <ProjectCard />
+        </Link>
+        <Link href={"/project"}>
+          <ProjectCard />
+        </Link>
+        <Link href={"/project"}>
+          <ProjectCard />
+        </Link>
+        <Link href={"/project"}>
+          <ProjectCard />
+        </Link>
+        <Link href={"/project"}>
+          <ProjectCard />
+        </Link>
+        <Link href={"/project"}>
+          <ProjectCard />
+        </Link>
+        <Link href={"/project"}>
+          <ProjectCard />
+        </Link>
       </div>
     </div>
   );
