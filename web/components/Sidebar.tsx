@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "@/public/logo.svg";
 import Image from "next/image";
 import { IoClose } from "react-icons/io5";
+import Link from "next/link";
 import {
   FiMenu,
   FiLayout,
@@ -19,19 +20,25 @@ const Sidebar = ({
 }) => {
   return (
     <div className="w-[80%] h-full py-5 flex flex-col items-center">
-      <p className="font-kumbh-sans text-projsync-green text-2xl font-medium mb-10 w-full relative">
-        Projsync
-        <IoClose className="absolute top-0 end-0 my-1 md:hidden" />
-      </p>
+      <Link href={"/"}>
+        <p className="font-kumbh-sans text-projsync-green text-2xl font-medium mb-10 w-full relative">
+          Projsync
+          <IoClose className="absolute top-0 end-0 my-1 md:hidden" />
+        </p>
+      </Link>
       <Image src={Logo} alt="Projsync Logo" className="size-40 mb-10" />
       <div className="flex flex-col space-y-2.5 w-full">
-        <div
-          className="flex h-10 w-full hover:bg-gray-400 items-center"
-          onClick={() => setActiveSection("Home")}
-        >
-          <FiMenu className="text-projsync-gray text-sm mx-3" />
-          <p className="font-manrope text-gray-500 font-normal text-sm">Home</p>
-        </div>
+        <Link href="/">
+          <button
+            className="flex h-10 w-full hover:bg-gray-400 items-center"
+            onClick={() => setActiveSection("Home")}
+          >
+            <FiMenu className="text-projsync-gray text-sm mx-3" />
+            <p className="font-manrope text-gray-500 font-normal text-sm">
+              Home
+            </p>
+          </button>
+        </Link>
         <div
           className="flex h-10 w-full hover:bg-gray-400 items-center"
           onClick={() => setActiveSection("Teams")}

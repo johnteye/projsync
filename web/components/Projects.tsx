@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Projects = () => {
   return (
-    <div>
+    <div className="">
       <div className="flex items-center justify-between border-b pb-2 mb-5">
         <p className="text-projsync-green font-kumbh-sans text-2xl">Projects</p>
         <button className="bg-projsync-green flex w-8 h-8 sm:h-10 sm:w-28 rounded-lg items-center justify-center">
@@ -29,7 +29,7 @@ const Projects = () => {
           View Project Status
         </button>
       </div>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-4 gap-4 overflow-y-auto">
         <Link href={"/project"}>
           <ProjectCard />
         </Link>
@@ -57,6 +57,7 @@ const Projects = () => {
         <Link href={"/project"}>
           <ProjectCard />
         </Link>
+
       </div>
     </div>
   );
