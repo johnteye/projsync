@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import AddMember from "@/components/AddMember";
 import Sidebar from "@/components/Sidebar";
 
-const page = () => {
-  const [activeSection, setActiveSection] = useState("Home");
+const AddMemberPage = () => {
+  const [,setActiveSection] = useState("Home");
   return (
     <div className="w-full h-screen flex">
       <div className="w-[20%] flex justify-center p-4 ">
@@ -19,4 +19,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default AddMemberPage;
