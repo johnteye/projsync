@@ -3,22 +3,13 @@ import { HiMenu } from "react-icons/hi";
 import { IoSearch } from "react-icons/io5";
 import Profile from "@/public/profile-image.svg";
 import Image from "next/image";
-import Logo from "@/public/logo.svg";
 import { PiQuestionBold } from "react-icons/pi";
 import { FiSettings, FiBell } from "react-icons/fi";
 
 const Navbar = () => {
   return (
     <div className="h-16 w-full border-b-2 sm:border-none border-[#E5E5E5] p-2.5 flex ">
-      <div className="w-[60%] items-center block sm:hidden ">
-        <button className="size-8 border rounded-lg flex items-center justify-center mr-2">
-          <HiMenu className="size-6" />
-        </button>
-        <div className="size-10 mr-5 ">
-          <Image src={Logo} alt="Projsync Logo" />
-        </div>
-        <p className="text-lg font-medium font-manrope mx-1">Dashboard</p>
-      </div>
+      
 
       <div className="flex w-[40%] sm:w-full justify-between sm:justify-normal items-center">
         <div className="relative flex items-center w-1/2 ">

@@ -9,8 +9,8 @@ const Homepage = () => {
   const [activeSection, setActiveSection] = useState("Home");
 
   return (
-    <div className="w-full h-screen flex">
-      <div className="w-[20%] flex justify-center p-4 ">
+    <div className="w-dvw h-dvh flex">
+      <div className="w-[20%] h-full flex justify-center p-4 ">
         <Sidebar setActiveSection={setActiveSection} />
       </div>
       <div className="w-full sm:w-[80%] bg-gray-100 p-4">

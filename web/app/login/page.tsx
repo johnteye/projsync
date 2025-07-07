@@ -9,8 +9,8 @@ import { FcGoogle } from "react-icons/fc";
 const SignIn = () => {
   return (
     <div className="w-screen h-dvh flex ">
-      <div className="w-2/5 flex flex-col items-center justify-center ">
-        <div className="w-[70%] flex flex-col justify-center items-center">
+      <div className="w-full lg:w-2/5 flex flex-col items-center justify-center ">
+        <div className="w-full p-10 lg:p-0 lg:w-[70%] flex flex-col justify-center items-center">
           <Image src={Logo} className="w-52 my-6" alt="ProjSync Logo" />
           <h3 className="font-extralight text-[#1B1F3BB2] text-3xl mb-7 ">Login into your account</h3>
           <div className="w-full ">
@@ -19,7 +19,7 @@ const SignIn = () => {
               <input
                 type="email"
                 placeholder="alex@email.com"
-                className="bg-[#F1F3F6] w-4/5 rounded-l-lg z-0 p-3 text-sm"
+                className="bg-[#F1F3F6] w-full lg:w-4/5 rounded-l-lg z-0 p-3 text-sm focus:outline-none"
               />
               <div className=" flex items-center justify-center bg-projsync-green rounded-lg size-10 -ml-2 z-10">
                 <AiOutlineMail className="text-white text-xl" />
@@ -32,7 +32,7 @@ const SignIn = () => {
               <input
                 type="password"
                 placeholder="Enter your password"
-                className="bg-[#F1F3F6] w-4/5 rounded-l-lg z-0 p-3 text-sm"
+                className="bg-[#F1F3F6] w-full lg:w-4/5 rounded-l-lg z-0 p-3 text-sm focus:outline-none"
               />
               <div className=" flex items-center justify-center bg-projsync-green rounded-lg size-10 -ml-2 z-10">
                 <RiLockFill className="text-white text-xl" />
@@ -43,7 +43,7 @@ const SignIn = () => {
             Forgot password?
           </a>
 
-          <button className="bg-projsync-green text-white text-xs h-10 w-[88%] mr-12 mb-5 rounded-md">
+          <button className="bg-projsync-green text-white text-xs h-10 w-full lg:w-[88%] lg:mr-12 mb-5 rounded-md">
             Login Now
           </button>
           <button className="flex items-center justify-center border h-10 w-9/12 rounded-xl mr-12">
@@ -58,12 +58,12 @@ const SignIn = () => {
             <div className="flex-grow h-px bg-gray-300"></div>
           </div>
 
-          <button className="border border-projsync-green text-projsync-green text-md font-medium h-10 w-[88%] mr-12 mb-24 rounded-md">
+          <button className="border border-projsync-green text-projsync-green text-md font-medium h-10 w-full lg:w-[88%] lg:mr-12 mb-24 rounded-md">
             Signup Now
           </button>
         </div>
       </div>
-      <div className="w-3/5 flex items-center justify-center bg-[#F1F3F6]">
+      <div className="w-3/5 hidden lg:flex items-center justify-center bg-[#F1F3F6] ">
         <Image src={SigninImage} alt="SignIn Image" className="size-[80%]" />
       </div>
     </div>

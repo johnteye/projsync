@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "@/public/logo.svg";
 import Image from "next/image";
 import { IoClose } from "react-icons/io5";
+import Projsync from "@/public/projsync-logo.svg"
 import Link from "next/link";
 import {
   FiMenu,
@@ -19,14 +20,15 @@ const Sidebar = ({
   setActiveSection: (section: string) => void;
 }) => {
   return (
-    <div className="w-[80%] h-full py-5 flex flex-col items-center">
+    <div className="w-[80%] h-auto py-5 flex flex-col items-center">
       <Link href={"/"}>
         <p className="font-kumbh-sans text-projsync-green text-2xl font-medium mb-10 w-full relative">
-          Projsync
+          <Image src={Projsync} alt="Projsync"/>
           <IoClose className="absolute top-0 end-0 my-1 md:hidden" />
         </p>
       </Link>
       <Image src={Logo} alt="Projsync Logo" className="size-40 mb-10" />
+    
       <div className="flex flex-col space-y-2.5 w-full">
         <Link href="/">
           <button
@@ -77,7 +79,7 @@ const Sidebar = ({
         </div>
       </div>
 
-      <footer className="flex flex-col sm:mt-40 w-full">
+      <footer className="flex flex-col w-full mt-10 lg:mt-32">
         <div className="flex h-10 w-full hover:bg-gray-400 items-center">
           <FiSettings className="text-projsync-gray text-sm mx-3" />
           <p className="font-manrope text-gray-500 font-normal text-sm">
