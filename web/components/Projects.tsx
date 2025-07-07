@@ -29,7 +29,7 @@ const Projects = () => {
           View Project Status
         </button>
       </div>
-      <div className="grid grid-cols-4 gap-4 overflow-y-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-2 lg:grid-cols-4 lg:gap-4 overflow-y-auto space-y-5">
         <Link href={"/project"}>
           <ProjectCard />
         </Link>

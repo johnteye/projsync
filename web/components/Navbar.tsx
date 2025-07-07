@@ -1,5 +1,4 @@
 import React from "react";
-import { HiMenu } from "react-icons/hi";
 import { IoSearch } from "react-icons/io5";
 import Profile from "@/public/profile-image.svg";
 import Image from "next/image";
