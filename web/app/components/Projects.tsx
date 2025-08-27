@@ -12,7 +12,7 @@ const Projects = () => {
         <button className="bg-projsync-green flex w-8 h-8 sm:h-10 sm:w-28 rounded-lg items-center justify-center">
           <IoAddOutline className="text-white size-6 font-extrabold sm:mr-1" />
           <span className="text-white font-manrope text-xs  font-medium hidden sm:block">
-            New Group
+            New Project
           </span>
         </button>
       </div>
@@ -29,35 +29,34 @@ const Projects = () => {
           View Project Status
         </button>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-2 lg:grid-cols-4 lg:gap-4 overflow-y-auto space-y-5">
-        <Link href={"/project"}>
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-4">
+        <Link href={"/dashboard/projects/{id}"}>
           <ProjectCard />
         </Link>
-        <Link href={"/project"}>
+        <Link href={"/dashboard/projects/{id}"}>
           <ProjectCard />
         </Link>
-        <Link href={"/project"}>
+        <Link href={"/dashboard/projects/{id}"}>
           <ProjectCard />
         </Link>
-        <Link href={"/project"}>
+        <Link href={"/dashboard/projects/{id}"}>
           <ProjectCard />
         </Link>
-        <Link href={"/project"}>
+        <Link href={"/dashboard/projects/{id}"}>
           <ProjectCard />
         </Link>
-        <Link href={"/project"}>
+        <Link href={"/dashboard/projects/{id}"}>
           <ProjectCard />
         </Link>
-        <Link href={"/project"}>
+        <Link href={"/dashboard/projects/{id}"}>
           <ProjectCard />
         </Link>
-        <Link href={"/project"}>
+        <Link href={"/dashboard/projects/{id}"}>
           <ProjectCard />
         </Link>
-        <Link href={"/project"}>
+        <Link href={"/dashboard/projects/{id}"}>
           <ProjectCard />
         </Link>
-
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 const ProjectCard = () => {
   return (
-    <div className='w-60 h-44 border rounded-2xl p-4'>
+    <div className='w-full md:w-60 h-44 border rounded-2xl p-4'>
         <div className='flex items-center justify-between mb-9'>
             <p className='font-manrope text-projsync-green font-medium text-[18.93px]'>OrionPay</p>
             <IoMdArrowRoundForward className='text-projsync-green text-xl'/>

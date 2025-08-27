@@ -73,7 +73,7 @@ const Teams = () => {
         <button className="bg-projsync-green flex w-8 h-8 sm:h-10 sm:w-28 rounded-lg items-center justify-center">
           <IoAddOutline className="text-white size-6 font-extrabold sm:mr-1" />
           <span className="text-white font-manrope text-xs font-medium hidden sm:block">
-            New Group
+            New Team
           </span>
         </button>
       </div>

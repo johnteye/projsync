@@ -78,22 +78,22 @@ const Sidebar: React.FC = () => {
             <span className="font-manrope">Home</span>
           </Link>
 
-          <Link href="/teams" className={defaultClasses}>
+          <Link href="/dashboard/teams" className={defaultClasses}>
             <FiLayout className="mr-3 text-lg text-gray-500" />
             <span className="font-manrope">Teams</span>
           </Link>
 
-          <Link href="/projects" className={defaultClasses}>
+          <Link href="/dashboard/projects" className={defaultClasses}>
             <FiCalendar className="mr-3 text-lg text-gray-500" />
             <span className="font-manrope">Projects</span>
           </Link>
 
-          <Link href="/documents" className={defaultClasses}>
+          <Link href="/dashboard/documents" className={defaultClasses}>
             <FiCopy className="mr-3 text-lg text-gray-500" />
             <span className="font-manrope">Documents</span>
           </Link>
 
-          <Link href="/messages" className={defaultClasses}>
+          <Link href="/dashboard/messages" className={defaultClasses}>
             <FiMail className="mr-3 text-lg text-gray-500" />
             <span className="font-manrope">Messages</span>
           </Link>
@@ -101,7 +101,7 @@ const Sidebar: React.FC = () => {
 
         {/* Footer Navigation */}
         <footer className="mt-20 md:mt-40 flex flex-col space-y-2.5 pt-5">
-          <Link href="/settings" className={defaultClasses}>
+          <Link href="/dashboard/settings" className={defaultClasses}>
             <FiSettings className="mr-3 text-lg text-gray-500" />
             <span className="font-manrope">Settings</span>
           </Link>
