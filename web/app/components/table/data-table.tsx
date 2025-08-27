@@ -1,14 +1,14 @@
 "use client";
 
 import * as React from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/app/components/ui/button";
 
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@/app/components/ui/dropdown-menu";
 
 import {
   ColumnDef,
@@ -30,7 +30,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table";
+} from "@/app/components/ui/table";
 import { IoSearch } from "react-icons/io5";
 
 interface DataTableProps<TData, TValue> {
@@ -78,9 +78,7 @@ export function DataTable<TData, TValue>({
           <IoSearch className="absolute left-2 text-gray-400 size-5" />
           <input
             type="text"
-            value={
-              (table.getColumn("team")?.getFilterValue() as string) ?? ""
-            }
+            value={(table.getColumn("team")?.getFilterValue() as string) ?? ""}
             placeholder="Search Teams"
             onChange={(event) =>
               table.getColumn("team")?.setFilterValue(event.target.value)

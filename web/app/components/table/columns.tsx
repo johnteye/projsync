@@ -2,8 +2,8 @@
 
 import { ArrowUpDown } from "lucide-react";
 import { ColumnDef } from "@tanstack/react-table";
-import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
+import { Button } from "@/app/components/ui/button";
+import { Checkbox } from "@/app/components/ui/checkbox";
 import Image from "next/image";
 
 export type Image = {
@@ -52,11 +52,17 @@ export const columns: ColumnDef<TeamsInfo>[] = [
     header: () => <div className="font-light font-manrope">Image</div>,
     cell: ({ row }) => {
       const image = row.getValue("image") as Image;
-      return  (
+      return (
         <div>
-          <Image src={image.url} alt={image.alt} width={10} height={10} className="size-8" />
+          <Image
+            src={image.url}
+            alt={image.alt}
+            width={10}
+            height={10}
+            className="size-8"
+          />
         </div>
-          );
+      );
     },
   },
   {
@@ -83,7 +89,9 @@ export const columns: ColumnDef<TeamsInfo>[] = [
   },
   {
     accessorKey: "projectLead",
-    header: () => <div className="font-light font-manrope text-left">Project Lead</div>,
+    header: () => (
+      <div className="font-light font-manrope text-left">Project Lead</div>
+    ),
     cell: ({ row }) => {
       return (
         <div className="text-left font-light font-manrope text-xs text-gray-400">

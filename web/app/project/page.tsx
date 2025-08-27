@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import Sidebar from "@/components/Sidebar";
-import Navbar from "@/components/Navbar";
-import ProjectInfo from "@/components/ProjectInfo";
-import Teams from "@/components/Teams";
-import Projects from "@/components/Projects";
+import Sidebar from "@/app/components/Sidebar";
+import Navbar from "@/app/components/Navbar";
+import ProjectInfo from "@/app/components/ProjectInfo";
+import Teams from "@/app/components/Teams";
+import Projects from "@/app/components/Projects";
 
 const Homepage = () => {
   const [activeSection, setActiveSection] = useState("ProjectInfo");
@@ -12,7 +12,7 @@ const Homepage = () => {
   return (
     <div className="w-full h-screen flex">
       <div className="hidden sm:w-[20%] sm:flex sm:justify-center p-4 ">
-        <Sidebar setActiveSection={setActiveSection} />
+        <Sidebar />
       </div>
       <div className="w-full sm:w-[80%] bg-gray-100 p-4">
         <Navbar />

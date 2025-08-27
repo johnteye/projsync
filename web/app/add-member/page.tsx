@@ -1,15 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import AddMember from "@/components/AddMember";
-import Sidebar from "@/components/Sidebar";
+import AddMember from "@/app/components/AddMember";
+import Sidebar from "@/app/components/Sidebar";
 
 const AddMemberPage = () => {
-  const [,setActiveSection] = useState("Home");
+  const [, setActiveSection] = useState("Home");
   return (
     <div className="w-full h-screen flex">
       <div className="w-[20%] flex justify-center p-4 ">
-        <Sidebar setActiveSection={setActiveSection} />
-       
+        <Sidebar />
       </div>
       <AddMember
         onSubmit={(data) => console.log(data)}

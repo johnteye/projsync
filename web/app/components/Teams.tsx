@@ -1,8 +1,8 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 import { IoAddOutline } from "react-icons/io5";
-import { TeamsInfo, columns } from "@/components/table/columns";
-import { DataTable } from "@/components/table/data-table";
+import { TeamsInfo, columns } from "@/app/components/table/columns";
+import { DataTable } from "@/app/components/table/data-table";
 import profileImage from "@/public/profile-image.svg";
 
 // Move data outside the component
@@ -48,11 +48,11 @@ const getDummyData = (): TeamsInfo[] => {
 
 const Teams = () => {
   const [data, setData] = useState<TeamsInfo[]>([]);
-  
+
   useEffect(() => {
     // Fetch data when component mounts
     setData(getDummyData());
-    
+
     // If you need to fetch from an API instead:
     // const fetchData = async () => {
     //   try {
