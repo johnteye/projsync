@@ -1,4 +1,4 @@
-// app/components/addProject.tsx
+// app/components/addproject.tsx
 "use client";
 
 import type React from "react";
@@ -10,7 +10,7 @@ import { IoImageOutline } from "react-icons/io5";
 interface AddProjectForm {
   name: string;
   description: string;
-  members: string[];    // selected member IDs or names
+  members: string[]; // selected member IDs or names
   image: File | null;
 }
 interface AddProjectProps {
@@ -57,19 +57,21 @@ export default function AddProject({
   };
 
   return (
-  <div>
-     <div className="flex items-center justify-between border-b pb-2">
-            <p className="text-projsync-green font-kumbh-sans text-2xl">Projects</p>
-            
+    <div>
+      <div className="flex items-center justify-between border-b pb-2">
+        <p className="text-projsync-green font-kumbh-sans text-2xl">Create a Project</p>
       </div>
-      <div className="w-full max-w-4xl mx-auto p-6">
+
+      {/* Center the card on the page */}
+      <div className="w-full max-w-6xl mx-auto p-6">
         <form
           onSubmit={handleSubmit}
-          className="border border-dashed border-sky-300 rounded-lg p-8"
+          className="border border-dashed border-sky-300 rounded-lg p-8 bg-white"
         >
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Left column - Image upload */}
-            <div className="flex flex-col items-center justify-start">
+          {/* FIX: two-column grid with fixed left column, top-aligned, bigger gap */}
+          <div className="grid grid-cols-1 md:grid-cols-[340px_minmax(0,1fr)] items-start gap-10">
+            {/* LEFT: Image upload — top-left, fixed width */}
+            <div className="flex flex-col items-start w-[340px] max-w-full">
               <div className="w-full aspect-square bg-gray-100 rounded-lg flex items-center justify-center mb-4">
                 {imagePreview ? (
                   <Image
@@ -83,10 +85,10 @@ export default function AddProject({
                   <IoImageOutline className="text-9xl text-gray-400" />
                 )}
               </div>
-  
+
               <label
                 htmlFor="image-upload"
-                className="w-full border border-dashed border-gray-300 rounded-lg p-4 text-center text-sky-500 cursor-pointer hover:bg-gray-50 transition-colors"
+                className="w-full border border-dashed border-gray-300 rounded-lg p-4 text-center text-sky-600 cursor-pointer hover:bg-gray-50 transition-colors"
               >
                 Upload an image for the project
                 <input
@@ -97,7 +99,7 @@ export default function AddProject({
                   onChange={handleImageChange}
                 />
               </label>
-  
+
               {fileName && (
                 <div className="w-full mt-4 p-4 bg-gray-50 rounded-lg flex items-center gap-3">
                   <div className="bg-gray-200 p-2 rounded">
@@ -107,14 +109,11 @@ export default function AddProject({
                 </div>
               )}
             </div>
-  
-            {/* Right column - Form fields */}
+
+            {/* RIGHT: Form fields */}
             <div className="flex flex-col gap-6">
               <div className="space-y-2">
-                <label
-                  htmlFor="name"
-                  className="block text-lg font-medium text-teal-600"
-                >
+                <label htmlFor="name" className="block text-lg font-medium text-teal-700">
                   Project name
                 </label>
                 <input
@@ -127,12 +126,9 @@ export default function AddProject({
                   required
                 />
               </div>
-  
+
               <div className="space-y-2">
-                <label
-                  htmlFor="description"
-                  className="block text-lg font-medium text-teal-600"
-                >
+                <label htmlFor="description" className="block text-lg font-medium text-teal-700">
                   Description
                 </label>
                 <textarea
@@ -143,16 +139,12 @@ export default function AddProject({
                   onChange={(e) => setDescription(e.target.value)}
                 />
               </div>
-  
+
               <div className="space-y-2">
-                <label
-                  htmlFor="members"
-                  className="block text-lg font-medium text-teal-600"
-                >
+                <label htmlFor="members" className="block text-lg font-medium text-teal-700">
                   Assign members
                 </label>
                 <div className="relative">
-                  {/* Use multiple select for multi-assign. Remove "multiple" if you want single select. */}
                   <select
                     id="members"
                     multiple
@@ -180,8 +172,8 @@ export default function AddProject({
               </div>
             </div>
           </div>
-  
-          {/* Form actions */}
+
+          {/* Actions */}
           <div className="flex justify-end gap-4 mt-8">
             <button
               type="button"
@@ -195,11 +187,11 @@ export default function AddProject({
               className="px-8 py-3 bg-slate-700 text-white rounded-lg hover:bg-slate-800 transition-colors flex items-center gap-2"
             >
               <Upload className="h-5 w-5" />
-              Create team
+              Create Project
             </button>
           </div>
         </form>
       </div>
-  </div>
+    </div>
   );
 }
