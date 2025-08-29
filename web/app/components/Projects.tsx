@@ -9,12 +9,14 @@ const Projects = () => {
     <div className="">
       <div className="flex items-center justify-between border-b pb-2 mb-5">
         <p className="text-projsync-green font-kumbh-sans text-2xl">Projects</p>
-        <button className="bg-projsync-green flex w-8 h-8 sm:h-10 sm:w-28 rounded-lg items-center justify-center">
-          <IoAddOutline className="text-white size-6 font-extrabold sm:mr-1" />
-          <span className="text-white font-manrope text-xs  font-medium hidden sm:block">
-            New Project
-          </span>
-        </button>
+        <Link href="/dashboard/projects/addproject">
+          <button className="bg-projsync-green flex w-8 h-8 sm:h-10 sm:w-28 rounded-lg items-center justify-center">
+            <IoAddOutline className="text-white size-6 font-extrabold sm:mr-1" />
+            <span className="text-white font-manrope text-xs  font-medium hidden sm:block">
+              New Project
+            </span>
+          </button>
+        </Link>
       </div>
       <div className="flex justify-between mb-5">
         <div className="relative flex items-center">
