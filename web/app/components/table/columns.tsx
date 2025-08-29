@@ -13,15 +13,11 @@ export type Image = {
 
 export type TeamsInfo = {
   id: string;
-  image: Image;
-  team:
-    | "DevOps"
-    | "UI/UX"
-    | "Backend Development"
-    | "Frontend Development"
-    | "Product Management";
-  projectLead: string;
-  updatedOn: Date;
+  image?: Image; // optional since API doesn’t send it yet
+  teamName: string;
+  teamLeadId: string;
+  description: string;
+  created_at: string; // comes as ISO string
 };
 
 export const columns: ColumnDef<TeamsInfo>[] = [
@@ -50,64 +46,54 @@ export const columns: ColumnDef<TeamsInfo>[] = [
   {
     accessorKey: "image",
     header: () => <div className="font-light font-manrope">Image</div>,
-    cell: ({ row }) => {
-      const image = row.getValue("image") as Image;
-      return (
-        <div>
-          <Image
-            src={image.url}
-            alt={image.alt}
-            width={10}
-            height={10}
-            className="size-8"
-          />
-        </div>
-      );
-    },
-  },
-  {
-    accessorKey: "team",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-          className="font-light font-manrope"
-        >
-          Team
-          <ArrowUpDown className="ml-2 " />
-        </Button>
-      );
-    },
-    cell: ({ row }) => {
-      return (
-        <div className="text-left font-light font-manrope text-sm text-gray-400">
-          {row.getValue("team")}
-        </div>
-      );
-    },
-  },
-  {
-    accessorKey: "projectLead",
-    header: () => (
-      <div className="font-light font-manrope text-left">Project Lead</div>
+    cell: () => (
+      <Image
+        src={"/profile-image.svg"} // don't include /public
+        alt="Team Lead"
+        width={32}
+        height={32}
+        className="size-8"
+      />
     ),
-    cell: ({ row }) => {
-      return (
-        <div className="text-left font-light font-manrope text-xs text-gray-400">
-          {row.getValue("projectLead")}
-        </div>
-      );
-    },
   },
   {
-    accessorKey: "updatedOn",
-    header: () => <div className="text-right font-light mr-8">Updated On</div>,
+    accessorKey: "teamName",
+    header: ({ column }) => (
+      <Button
+        variant="ghost"
+        onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        className="font-light font-manrope"
+      >
+        Team
+        <ArrowUpDown className="ml-2" />
+      </Button>
+    ),
+    cell: ({ row }) => (
+      <div className="text-left font-light font-manrope text-sm text-gray-400">
+        {row.getValue("teamName")}
+      </div>
+    ),
+  },
+  {
+    accessorKey: "teamLeadId",
+    header: () => (
+      <div className="font-light font-manrope text-left">Team Lead</div>
+    ),
+    cell: ({ row }) => (
+      <div className="text-left font-light font-manrope text-xs text-gray-400">
+        {row.getValue("teamLeadId")}
+      </div>
+    ),
+  },
+  {
+    accessorKey: "created_at",
+    header: () => <div className="text-right font-light mr-8">Created On</div>,
     cell: ({ row }) => {
-      const updatedDate = row.getValue("updatedOn") as Date;
+      const dateStr = row.getValue("created_at") as string;
+      const createdDate = new Date(dateStr);
       return (
         <div className="text-right font-light font-manrope text-gray-400 text-xs">
-          {updatedDate.toLocaleString("en-US", {
+          {createdDate.toLocaleString("en-US", {
             month: "2-digit",
             day: "2-digit",
             year: "numeric",

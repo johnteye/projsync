@@ -78,10 +78,10 @@ export function DataTable<TData, TValue>({
           <IoSearch className="absolute left-2 text-gray-400 size-5" />
           <input
             type="text"
-            value={(table.getColumn("team")?.getFilterValue() as string) ?? ""}
+            value={(table.getColumn("teamName")?.getFilterValue() as string) ?? ""}
             placeholder="Search Teams"
             onChange={(event) =>
-              table.getColumn("team")?.setFilterValue(event.target.value)
+              table.getColumn("teamName")?.setFilterValue(event.target.value)
             }
             className="size-8 sm:w-72 sm:h-12 border bg-white focus:outline-none border-gray-200 rounded-lg pl-8 shadow-xl"
           />

@@ -1,4 +1,3 @@
-// app/components/addTeam.tsx
 "use client";
 
 import type React from "react";
@@ -8,11 +7,13 @@ import { ChevronDown, FileText, Upload } from "lucide-react";
 import { IoImageOutline } from "react-icons/io5";
 
 interface AddTeamForm {
-  name: string;
+  teamName: string;       // ✅ matches your API
   description: string;
-  members: string[]; // selected member IDs or names
+  teamLeadId?: string;    // optional: select team lead
+  members: string[];      // selected member IDs
   image: File | null;
 }
+
 interface AddTeamProps {
   /** Called with form data when user submits */
   onSubmit: (data: AddTeamForm) => void;
@@ -30,9 +31,10 @@ export default function AddTeam({
   memberOptions,
   initialValues = {},
 }: AddTeamProps) {
-  const [name, setName] = useState(initialValues.name ?? "");
+  const [teamName, setTeamName] = useState(initialValues.teamName ?? "");
   const [description, setDescription] = useState(initialValues.description ?? "");
   const [members, setMembers] = useState<string[]>(initialValues.members ?? []);
+  const [teamLeadId, setTeamLeadId] = useState(initialValues.teamLeadId ?? "");
   const [image, setImage] = useState<File | null>(initialValues.image ?? null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [fileName, setFileName] = useState<string | null>(null);
@@ -53,24 +55,24 @@ export default function AddTeam({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSubmit({ name, description, members, image });
+    onSubmit({ teamName, description, teamLeadId, members, image });
   };
 
   return (
     <div>
       <div className="flex items-center justify-between border-b pb-2">
-        <p className="text-projsync-green font-kumbh-sans text-2xl">Create a team</p>
+        <p className="text-projsync-green font-kumbh-sans text-2xl">
+          Create a team
+        </p>
       </div>
 
-      {/* Center the card on the page */}
       <div className="w-full max-w-6xl mx-auto p-6">
         <form
           onSubmit={handleSubmit}
           className="border border-dashed border-sky-300 rounded-lg p-8 bg-white"
         >
-          {/* FIX: two-column grid with fixed left column, top-aligned, bigger gap */}
           <div className="grid grid-cols-1 md:grid-cols-[340px_minmax(0,1fr)] items-start gap-10">
-            {/* LEFT: Image upload — top-left, fixed width */}
+            {/* LEFT: Image */}
             <div className="flex flex-col items-start w-[340px] max-w-full">
               <div className="w-full aspect-square bg-gray-100 rounded-lg flex items-center justify-center mb-4">
                 {imagePreview ? (
@@ -110,23 +112,25 @@ export default function AddTeam({
               )}
             </div>
 
-            {/* RIGHT: Form fields */}
+            {/* RIGHT: Fields */}
             <div className="flex flex-col gap-6">
+              {/* Team Name */}
               <div className="space-y-2">
-                <label htmlFor="name" className="block text-lg font-medium text-teal-700">
+                <label htmlFor="teamName" className="block text-lg font-medium text-teal-700">
                   Team name
                 </label>
                 <input
-                  id="name"
+                  id="teamName"
                   type="text"
                   placeholder="Enter the team name"
                   className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  value={teamName}
+                  onChange={(e) => setTeamName(e.target.value)}
                   required
                 />
               </div>
 
+              {/* Description */}
               <div className="space-y-2">
                 <label htmlFor="description" className="block text-lg font-medium text-teal-700">
                   Description
@@ -140,6 +144,7 @@ export default function AddTeam({
                 />
               </div>
 
+              {/* Assign members */}
               <div className="space-y-2">
                 <label htmlFor="members" className="block text-lg font-medium text-teal-700">
                   Assign members
@@ -169,6 +174,26 @@ export default function AddTeam({
                     Hold Ctrl/Cmd to select multiple.
                   </p>
                 </div>
+              </div>
+
+              {/* (Optional) Team Lead */}
+              <div className="space-y-2">
+                <label htmlFor="teamLead" className="block text-lg font-medium text-teal-700">
+                  Team Lead
+                </label>
+                <select
+                  id="teamLead"
+                  className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                  value={teamLeadId}
+                  onChange={(e) => setTeamLeadId(e.target.value)}
+                >
+                  <option value="">-- Select a Team Lead --</option>
+                  {memberOptions.map((opt) => (
+                    <option key={opt.value} value={opt.value}>
+                      {opt.label}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
           </div>

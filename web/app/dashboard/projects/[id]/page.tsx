@@ -1,15 +1,14 @@
 import ProjectInfo from '@/app/components/ProjectInfo'
 import React from 'react'
 
-interface Props{
-  params: {id: number}
+interface Props {
+  params: { id: string } // Changed from number to string to match API data
 }
 
-const page = ({params: {id}}: Props) => {
+const page = ({ params: { id } }: Props) => {
   return (
     <div>
-      <ProjectInfo />
-      {id}
+      <ProjectInfo id={id} />
     </div>
   )
 }

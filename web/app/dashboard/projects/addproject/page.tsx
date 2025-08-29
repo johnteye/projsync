@@ -1,15 +1,15 @@
 'use client';
-import AddTeam from "@/app/components/AddProject";
+import AddProject from "@/app/components/AddProject";
 
 export default function AddProjectPage() {
   const memberOptions = [
-    { value: "u1", label: "Ama Sakyiwah" },
-    { value: "u2", label: "John Teye" },
-    { value: "u3", label: "Kofi Mensah" },
+    { value: "68b0bdb57b0f2431f0ef765a", label: "Ama Sakyiwah" },
+    { value: "68b0bdb57b0f2471f0ef765b", label: "John Teye" },
+    { value: "68b0bdb57b0f2231f0ef765b", label: "Kofi Mensah" },
   ];
 
   return (
-    <AddTeam
+    <AddProject
       memberOptions={memberOptions}
       onSubmit={(data) => {
         // TODO: send to API

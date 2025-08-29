@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
 
     // validate
-    if (!body?.name) {
+    if (!body?.teamName) {
       return NextResponse.json(
         { error: "Team name is required" },
         { status: 400 }
