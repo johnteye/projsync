@@ -1,10 +1,15 @@
 import ProjectInfo from '@/app/components/ProjectInfo'
 import React from 'react'
 
-const page = () => {
+interface Props{
+  params: {id: number}
+}
+
+const page = ({params: {id}}: Props) => {
   return (
     <div>
       <ProjectInfo />
+      {id}
     </div>
   )
 }
