@@ -12,6 +12,7 @@ import {
   FiHome,
 } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
+import { signOut } from "next-auth/react";
 
 import Logo from "@/public/logo.svg";
 import Projsync from "@/public/projsync-logo.svg";
@@ -106,9 +107,14 @@ const Sidebar: React.FC = () => {
             <span className="font-manrope">Settings</span>
           </Link>
 
-          <Link href="/logout" className={logoutClasses}>
-            <FiLogOut className="mr-3 text-lg" />
-            <span className="font-manrope">Log out</span>
+          <Link href="/api/auth/signout" className={logoutClasses}>
+            <button
+              className="flex"
+              onClick={() => signOut({ callbackUrl: "/" })}
+            >
+              <FiLogOut className="mr-3 text-lg" />
+              <span className="font-manrope text-white">Log out</span>
+            </button>
           </Link>
         </footer>
       </aside>

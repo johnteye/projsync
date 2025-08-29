@@ -24,7 +24,6 @@ export async function POST(request: NextRequest){
         ownerId, // must match your schema field
         projectName,
         description,
-        members: members || [],
       },
     });
     return NextResponse.json(project, {status: 201})

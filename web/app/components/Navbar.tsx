@@ -47,19 +47,16 @@ const Navbar = () => {
           <div className="flex justify-center items-center">
             <div>
               {status == "authenticated" && (
-                <p className="font-kumbh-sans text-xs text-projsync-green">
+                <p className="font-kumbh-sans text-md text-projsync-green">
                   {session.user?.name}
                 </p>
               )}
               {/* {status == "loading" && <div>Loading</div>} */}
-              <Link href='/api/auth/signout'>
+              <p className="text-xs text-gray-500">
+
+                View Profile
+              </p>
               
-              <button className="font-poppins text-[10px] text-[#1B1F3BA6]"
-                onClick={() => signOut({ callbackUrl: "/" })}
-              >
-                Sign Out
-              </button>
-              </Link>
             </div>
             <Image
               src={Profile}
