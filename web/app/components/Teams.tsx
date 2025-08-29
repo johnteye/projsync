@@ -71,7 +71,7 @@ const Teams = () => {
     <div>
       <div className="flex items-center justify-between border-b pb-2">
         <p className="text-projsync-green font-kumbh-sans text-2xl">Teams</p>
-       <Link href="/dashboard/projects/addteam">
+       <Link href="/dashboard/teams/addteam">
           <button className="bg-projsync-green flex w-8 h-8 sm:h-10 sm:w-28 rounded-lg items-center justify-center">
             <IoAddOutline className="text-white size-6 font-extrabold sm:mr-1" />
             <span className="text-white font-manrope text-xs font-medium hidden sm:block">
