@@ -6,10 +6,16 @@ import Profile from "@/public/profile-image.svg";
 import Image from "next/image";
 import { PiQuestionBold } from "react-icons/pi";
 import { FiSettings, FiBell } from "react-icons/fi";
+import { useSession } from "next-auth/react";
+import Link from "next/link";
+import { signOut } from "next-auth/react";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const { status, data: session } = useSession();
 
+  if (status == "loading") return null;
+  // {console.log(session!.user)}
   return (
     <div className="h-16 border-b-2 sm:border-none border-[#E5E5E5] flex justify-between ">
       {/* Left - Search */}
@@ -40,12 +46,20 @@ const Navbar = () => {
           </div>
           <div className="flex justify-center items-center">
             <div>
-              <p className="font-kumbh-sans text-xs text-projsync-green">
-                Ama Abrampah
-              </p>
-              <p className="font-poppins text-[10px] text-[#1B1F3BA6]">
-                View profile
-              </p>
+              {status == "authenticated" && (
+                <p className="font-kumbh-sans text-xs text-projsync-green">
+                  {session.user?.name}
+                </p>
+              )}
+              {/* {status == "loading" && <div>Loading</div>} */}
+              <Link href='/api/auth/signout'>
+              
+              <button className="font-poppins text-[10px] text-[#1B1F3BA6]"
+                onClick={() => signOut({ callbackUrl: "/" })}
+              >
+                Sign Out
+              </button>
+              </Link>
             </div>
             <Image
               src={Profile}

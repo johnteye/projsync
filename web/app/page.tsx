@@ -4,7 +4,8 @@ import SigninImage from "@/public/sign-in.svg";
 import Logo from "@/public/projsync-logo.svg";
 import { AiOutlineMail } from "react-icons/ai";
 import { RiLockFill } from "react-icons/ri";
-import { FcGoogle } from "react-icons/fc";
+import Link from "next/link";
+import GoogleSignIn from "./components/GoogleSignIn";
 
 const SignIn = () => {
   return (
@@ -12,7 +13,9 @@ const SignIn = () => {
       <div className="w-full lg:w-2/5 flex flex-col items-center justify-center ">
         <div className="w-full p-10 lg:p-0 lg:w-[70%] flex flex-col justify-center items-center">
           <Image src={Logo} className="w-52 my-6" alt="ProjSync Logo" />
-          <h3 className="font-extralight text-[#1B1F3BB2] text-3xl mb-7 ">Login into your account</h3>
+          <h3 className="font-extralight text-[#1B1F3BB2] text-3xl mb-7 ">
+            Login into your account
+          </h3>
           <div className="w-full ">
             <p className="font-light text-sm mb-2">Email address</p>
             <div className="flex mb-2 items-center">
@@ -43,15 +46,12 @@ const SignIn = () => {
             Forgot password?
           </a>
 
-          <button className="bg-projsync-green text-white text-xs h-10 w-full lg:w-[88%] lg:mr-12 mb-5 rounded-md">
+          <button className="bg-projsync-green text-white text-xs h-10 w-full lg:w-[88%] lg:mr-12 mb-5 rounded-sm">
             Login Now
           </button>
-          <button className="flex items-center justify-center border h-10 w-9/12 rounded-xl mr-12">
-            <FcGoogle className="text-2xl mr-3.5" />
-            <p className="text-xs">
-              Login with <span className="font-bold">google</span>
-            </p>
-          </button>
+          <Link href="/api/auth/signin">
+            <GoogleSignIn />
+          </Link>
           <div className="flex items-center my-6 w-full">
             <div className="flex-grow h-px bg-gray-300"></div>
             <span className="mx-4 text-gray-500 text-sm">OR</span>
