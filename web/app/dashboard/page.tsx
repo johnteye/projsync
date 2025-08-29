@@ -10,10 +10,10 @@ import { Badge } from "@/app/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/app/components/ui/table";
 
 // Replace with your real avatar URLs if you have them
-const AV1 = "/avatars/1.png";
-const AV2 = "/avatars/2.png";
-const AV3 = "/avatars/3.png";
-const AV4 = "/avatars/4.png";
+const AV1 = "/avatars/user.png";
+const AV2 = "/avatars/man.png";
+const AV3 = "/avatars/woman.png";
+const AV4 = "/avatars/hacker.png";
 
 const projectCards = [
   { name: "E-Commerce Platform", lead: "Sarah Johnson", avatars: [AV1, AV2, AV3, AV4], count: 6 },
