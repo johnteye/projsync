@@ -74,7 +74,7 @@ const Sidebar: React.FC = () => {
 
         {/* Navigation Links */}
         <nav className="flex flex-col space-y-2.5">
-          <Link href="/" className={defaultClasses}>
+          <Link href="/dashboard" className={defaultClasses}>
             <FiHome className="mr-3 text-lg text-gray-500" />
             <span className="font-manrope">Home</span>
           </Link>
