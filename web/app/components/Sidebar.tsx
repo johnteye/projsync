@@ -55,7 +55,7 @@ const Sidebar: React.FC = () => {
       >
         {/* Projsync Logo */}
         <div className="relative mb-10 flex w-full items-center justify-between">
-          <Link href="/">
+          <Link href="/dashboard">
             <Image src={Projsync} alt="Projsync" className="h-8 w-auto" />
           </Link>
           <button
