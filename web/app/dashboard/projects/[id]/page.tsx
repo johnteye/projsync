@@ -1,16 +1,18 @@
-import ProjectInfo from '@/app/components/ProjectInfo'
-import React from 'react'
+import ProjectInfo from '@/app/components/ProjectInfo';
+import React from 'react';
 
 interface Props {
-  params: { id: string } // Changed from number to string to match API data
+  params: Promise<{ id: string }>;
 }
 
-const page = ({ params: { id } }: Props) => {
+const page = async ({ params }: Props) => {
+  const { id } = await params; // Resolve the Promise to get the id
+
   return (
     <div>
       <ProjectInfo id={id} />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

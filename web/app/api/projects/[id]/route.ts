@@ -3,14 +3,12 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-interface Props {
-  params: { id: string }; 
-}
 
-export async function GET(request: NextRequest, { params }: Props) {
+export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
+    const { id } = await params;
     const project = await prisma.project.findUnique({
-      where: { id: params.id },
+      where: { id },
       include: { owner: true }, 
     });
 
