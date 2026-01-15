@@ -74,7 +74,7 @@ export function DataTable<TData, TValue>({
   return (
     <div>
       <div className="flex">
-        <div className="relative flex items-center mb-10 ">
+        <div className="relative flex items-center mb-10">
           <IoSearch className="absolute left-2 text-gray-400 size-5" />
           <input
             type="text"
@@ -83,7 +83,7 @@ export function DataTable<TData, TValue>({
             onChange={(event) =>
               table.getColumn("teamName")?.setFilterValue(event.target.value)
             }
-            className="size-8 sm:w-72 sm:h-12 border bg-white focus:outline-none border-gray-200 rounded-lg pl-8 shadow-xl"
+            className="w-52 sm:w-72 h-9 sm:h-12 border bg-white focus:outline-none border-gray-200 rounded-md pl-8  px-3"
           />
         </div>
 

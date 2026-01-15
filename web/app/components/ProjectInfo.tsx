@@ -63,42 +63,71 @@ const ProjectInfo: React.FC<ProjectInfoProps> = ({ id }) => {
   }
 
   return (
-    <div>
-      <div className="flex items-center justify-between border-b pb-2 mb-5">
-        <p className="text-projsync-green font-kumbh-sans text-2xl">Projects</p>
-        <button className="bg-projsync-green flex w-8 h-8 sm:h-10 sm:w-28 rounded-lg items-center justify-center">
-          <IoIosArrowDown className="text-white size-4 font-extrabold sm:mr-1" />
-          <span className="text-white font-manrope text-xs font-medium hidden sm:block">
-            Assign Status
-          </span>
+    <div className="w-full">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-gray-200 pb-4 mb-6">
+        <h2 className="text-2xl md:text-3xl font-semibold text-projsync-green">
+          Projects
+        </h2>
+        <button className="flex items-center justify-center gap-2 bg-projsync-green hover:bg-green-600 text-white rounded-lg px-4 py-2.5 font-medium text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 active:scale-95 self-start sm:self-auto">
+          <IoIosArrowDown className="h-5 w-5" />
+          <span>Assign Status</span>
         </button>
       </div>
-      <div>
-        <h1 className="font-manrope font-medium text-3xl text-projsync-green mb-4">
-          {project.projectName}
-        </h1>
-        <h4 className="font-manrope text-projsync-green font-normal text-sm mb-4">
-          Description
-        </h4>
-        <p className="font-poppins font-light text-gray-700 text-left text-sm/7 w-8/12 mb-4">
-          {project.description}
-        </p>
-        <h3 className="font-kumbh-sans text-projsync-green font-medium text-sm mb-4">
-          Members
-        </h3>
-        <div className="space-y-3 mb-4">
-          {project.members && project.members.length > 0 ? (
-            project.members.map((member) => (
-              <div key={member.id} className="flex">
-                <Image src={Image4} alt="profile" className="size-7 mr-5" />
-                <p className="font-kumbh-sans">
-                  {member.user.username || member.user.email}
-                </p>
+
+      <div className="space-y-6">
+        {/* Project Name */}
+        <div>
+          <h1 className="text-2xl md:text-3xl font-semibold text-projsync-green mb-1">
+            {project.projectName}
+          </h1>
+          <p className="text-xs md:text-sm text-gray-500">
+            Created {new Date(project.created_at).toLocaleDateString()}
+          </p>
+        </div>
+
+        {/* Description Section */}
+        <div>
+          <h3 className="text-sm md:text-base font-semibold text-gray-900 mb-2">
+            Description
+          </h3>
+          <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+            {project.description || "No description provided"}
+          </p>
+        </div>
+
+        {/* Members Section */}
+        <div>
+          <h3 className="text-sm md:text-base font-semibold text-gray-900 mb-3">
+            Team Members
+          </h3>
+          <div className="space-y-2">
+            {project.members && project.members.length > 0 ? (
+              project.members.map((member) => (
+                <div
+                  key={member.id}
+                  className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                >
+                  <Image
+                    src={Image4}
+                    alt={member.user.username || "Member"}
+                    className="h-8 w-8 rounded-full flex-shrink-0 object-cover"
+                  />
+                  <div className="flex-1 min-w-0">
+                    <p className="font-medium text-sm text-gray-900 truncate">
+                      {member.user.username || "Unknown"}
+                    </p>
+                    <p className="text-xs text-gray-500 truncate">
+                      {member.user.email}
+                    </p>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="p-4 bg-gray-50 rounded-lg text-center">
+                <p className="text-sm text-gray-500">No members assigned yet</p>
               </div>
-            ))
-          ) : (
-            <p className="text-gray-500 text-sm">No members assigned</p>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </div>

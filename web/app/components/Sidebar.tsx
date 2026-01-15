@@ -1,10 +1,9 @@
 "use client";
 
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  FiMenu,
   FiLayout,
   FiCalendar,
   FiCopy,
@@ -15,12 +14,13 @@ import {
 } from "react-icons/fi";
 import { IoClose } from "react-icons/io5";
 import { signOut } from "next-auth/react";
+import { useSidebar } from "@/app/context/SidebarContext";
 
 import Logo from "@/public/logo.svg";
 import Projsync from "@/public/projsync-logo.svg";
 
 const Sidebar: React.FC = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { sidebarOpen, setSidebarOpen } = useSidebar();
 
   const commonClasses =
     "flex h-10 w-full items-center rounded-lg px-3 text-sm font-medium transition-all duration-200";
@@ -29,17 +29,6 @@ const Sidebar: React.FC = () => {
 
   return (
     <Fragment>
-      {/* Mobile Hamburger Menu */}
-      <button
-        className={`fixed left-4 top-8 z-40 rounded-sm bg-white p-2 shadow-lg md:hidden ${
-          sidebarOpen ? "hidden" : "block"
-        }`}
-        onClick={() => setSidebarOpen(true)}
-        aria-label="Open sidebar"
-      >
-        <FiMenu className="text-2xl text-projsync-green" />
-      </button>
-
       {/* Mobile Overlay */}
       {sidebarOpen && (
         <div
