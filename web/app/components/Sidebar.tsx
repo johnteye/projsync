@@ -66,27 +66,47 @@ const Sidebar: React.FC = () => {
 
           {/* Navigation Links */}
           <nav className="flex flex-col gap-2">
-            <Link href="/dashboard" className={defaultClasses}>
+            <Link
+              href="/dashboard"
+              className={defaultClasses}
+              onClick={() => setSidebarOpen(false)}
+            >
               <FiHome className="mr-3 text-lg" />
               <span className="font-manrope">Home</span>
             </Link>
 
-            <Link href="/dashboard/teams" className={defaultClasses}>
+            <Link
+              href="/dashboard/teams"
+              className={defaultClasses}
+              onClick={() => setSidebarOpen(false)}
+            >
               <FiLayout className="mr-3 text-lg" />
               <span className="font-manrope">Teams</span>
             </Link>
 
-            <Link href="/dashboard/projects" className={defaultClasses}>
+            <Link
+              href="/dashboard/projects"
+              className={defaultClasses}
+              onClick={() => setSidebarOpen(false)}
+            >
               <FiCalendar className="mr-3 text-lg" />
               <span className="font-manrope">Projects</span>
             </Link>
 
-            <Link href="/dashboard/documents" className={defaultClasses}>
+            <Link
+              href="/dashboard/documents"
+              className={defaultClasses}
+              onClick={() => setSidebarOpen(false)}
+            >
               <FiCopy className="mr-3 text-lg" />
               <span className="font-manrope">Documents</span>
             </Link>
 
-            <Link href="/dashboard/messages" className={defaultClasses}>
+            <Link
+              href="/dashboard/messages"
+              className={defaultClasses}
+              onClick={() => setSidebarOpen(false)}
+            >
               <FiMail className="mr-3 text-lg" />
               <span className="font-manrope">Messages</span>
             </Link>
@@ -95,7 +115,11 @@ const Sidebar: React.FC = () => {
 
         {/* Footer Navigation */}
         <footer className="flex flex-col gap-2 border-t border-gray-200 pt-4">
-          <Link href="/dashboard/settings" className={defaultClasses}>
+          <Link
+            href="/dashboard/settings"
+            className={defaultClasses}
+            onClick={() => setSidebarOpen(false)}
+          >
             <FiSettings className="mr-3 text-lg" />
             <span className="font-manrope">Settings</span>
           </Link>

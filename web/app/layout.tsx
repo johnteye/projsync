@@ -16,6 +16,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "ProjSync",
   description: "a CRM for NascoTech",
+  icons: {
+    icon: "/projsync-logo.svg",
+  },
 };
 
 export default function RootLayout({
