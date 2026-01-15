@@ -23,6 +23,7 @@ import {
   TableRow,
 } from "@/app/components/ui/table";
 import { Button } from "@/app/components/ui/button";
+import { useSession } from "next-auth/react";
 
 // Replace with your real avatar URLs
 const AV1 = "/avatars/user.png";
@@ -73,9 +74,11 @@ function useNowString() {
   return `${date} • ${time}`;
 }
 
+
+
 export default function AdminHomepage() {
   const nowStr = useNowString();
-
+  const { status, data: session } = useSession();
   return (
     <div className="p-8 space-y-8">
       {/* Welcome Banner */}
@@ -110,7 +113,7 @@ export default function AdminHomepage() {
               </div>
 
               <h1 className="text-4xl font-semibold mb-3 leading-tight">
-                Welcome back, <span className="text-cyan-200">Ama</span>
+                Welcome back, <span className="text-cyan-200"> {session?.user?.name}</span>
               </h1>
               <p className="text-cyan-100 text-lg mb-6 max-w-md leading-relaxed">
                 Ready to ship something amazing? Your team is waiting.
