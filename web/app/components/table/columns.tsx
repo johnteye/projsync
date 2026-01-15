@@ -16,6 +16,11 @@ export type TeamsInfo = {
   image?: Image; // optional since API doesn’t send it yet
   teamName: string;
   teamLeadId: string;
+  teamLead?: {
+    id: string;
+    username: string;
+    email: string;
+  };
   description: string;
   created_at: string; // comes as ISO string
 };
@@ -79,11 +84,14 @@ export const columns: ColumnDef<TeamsInfo>[] = [
     header: () => (
       <div className="font-light font-manrope text-left">Team Lead</div>
     ),
-    cell: ({ row }) => (
-      <div className="text-left font-light font-manrope text-xs text-gray-400">
-        {row.getValue("teamLeadId")}
-      </div>
-    ),
+    cell: ({ row }) => {
+      const teamLead = row.original.teamLead;
+      return (
+        <div className="text-left font-light font-manrope text-xs text-gray-400">
+          {teamLead?.username || "Unassigned"}
+        </div>
+      );
+    },
   },
   {
     accessorKey: "created_at",

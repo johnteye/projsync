@@ -1,15 +1,38 @@
 "use client";
 import AddProject from "@/app/components/AddProject";
+import { SpinnerSmall } from "@/app/components/ui/spinner";
 import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function AddProjectPage() {
   const router = useRouter();
+  const [memberOptions, setMemberOptions] = useState<
+    Array<{ value: string; label: string }>
+  >([]);
+  const [loadingMembers, setLoadingMembers] = useState(true);
 
-  const memberOptions = [
-    { value: "68b0bdb57b0f2431f0ef765a", label: "Ama Sakyiwah" },
-    { value: "68b0bdb57b0f2471f0ef765b", label: "John Teye" },
-    { value: "68b0bdb57b0f2231f0ef765b", label: "Kofi Mensah" },
-  ];
+  // Fetch users from the API
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const res = await fetch("/api/users");
+        if (!res.ok) throw new Error("Failed to fetch users");
+        const users = await res.json();
+        const options = users.map((user: any) => ({
+          value: user.id,
+          label: user.username || user.email,
+        }));
+        setMemberOptions(options);
+      } catch (err) {
+        console.error("Error fetching users:", err);
+        setMemberOptions([]);
+      } finally {
+        setLoadingMembers(false);
+      }
+    };
+
+    fetchUsers();
+  }, []);
 
   const handleSubmit = async (data: {
     name: string;
@@ -48,7 +71,9 @@ export default function AddProjectPage() {
     }
   };
 
-  return (
+  return loadingMembers ? (
+    <SpinnerSmall />
+  ) : (
     <AddProject
       memberOptions={memberOptions}
       onSubmit={handleSubmit}

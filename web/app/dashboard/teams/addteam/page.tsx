@@ -1,19 +1,41 @@
 "use client";
 
 import AddTeam from "@/app/components/AddTeam";
+import { SpinnerSmall } from "@/app/components/ui/spinner";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function AddTeamPage() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [memberOptions, setMemberOptions] = useState<
+    Array<{ value: string; label: string }>
+  >([]);
+  const [loadingMembers, setLoadingMembers] = useState(true);
 
-  const memberOptions = [
-    { value: "68b0bdb57b0f2431f0ef765a", label: "Ama Sakyiwah" },
-    { value: "68b0bdb57b0f2471f0ef765b", label: "John Teye" },
-    { value: "68b0bdb57b0f2231f0ef765b", label: "Kofi Mensah" },
-  ];
+  // Fetch users from the API
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const res = await fetch("/api/users");
+        if (!res.ok) throw new Error("Failed to fetch users");
+        const users = await res.json();
+        const options = users.map((user: any) => ({
+          value: user.id,
+          label: user.username || user.email,
+        }));
+        setMemberOptions(options);
+      } catch (err) {
+        console.error("Error fetching users:", err);
+        setMemberOptions([]);
+      } finally {
+        setLoadingMembers(false);
+      }
+    };
+
+    fetchUsers();
+  }, []);
 
   const handleSubmit = async (data: any) => {
     setLoading(true);
@@ -28,10 +50,9 @@ export default function AddTeamPage() {
         body: JSON.stringify({
           teamName: data.teamName,
           description: data.description,
-          teamLeadId: data.teamLeadId,
-          members: data.members?.map((m: any) => ({
-            userId: m.value,
-            role: m.role || "member",
+          teamLeadId: data.teamLeadId || null,
+          members: data.members?.map((userId: string) => ({
+            userId,
           })),
         }),
       });
@@ -57,14 +78,16 @@ export default function AddTeamPage() {
   return (
     <div>
       {error && <p className="text-red-500 text-sm mb-2">Error: {error}</p>}
-      <AddTeam
-        memberOptions={memberOptions}
-        onSubmit={handleSubmit}
-        onCancel={() => router.back()}
-      />
-      {loading && (
-        <p className="text-gray-500 text-sm mt-2">Creating team...</p>
+      {loadingMembers ? (
+        <SpinnerSmall />
+      ) : (
+        <AddTeam
+          memberOptions={memberOptions}
+          onSubmit={handleSubmit}
+          onCancel={() => router.back()}
+        />
       )}
+      {loading && <SpinnerSmall />}
     </div>
   );
 }

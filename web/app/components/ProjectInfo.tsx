@@ -1,8 +1,9 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import Image from "next/image";
 import Image4 from "@/public/project-card4.svg";
+import { Spinner } from "@/app/components/ui/spinner";
 
 interface Project {
   id: string;
@@ -10,6 +11,16 @@ interface Project {
   projectName: string;
   description: string;
   created_at: string;
+  members?: Array<{
+    id: string;
+    userId: string;
+    projectId: string;
+    user: {
+      id: string;
+      username: string;
+      email: string;
+    };
+  }>;
 }
 
 interface ProjectInfoProps {
@@ -40,7 +51,7 @@ const ProjectInfo: React.FC<ProjectInfoProps> = ({ id }) => {
   }, [id]);
 
   if (loading) {
-    return <p>Loading project...</p>;
+    return <Spinner />;
   }
 
   if (error) {
@@ -63,29 +74,31 @@ const ProjectInfo: React.FC<ProjectInfoProps> = ({ id }) => {
         </button>
       </div>
       <div>
-        <h1 className="font-manrope font-medium text-3xl text-projsync-green mb-4">{project.projectName}</h1>
-        <h4 className="font-manrope text-projsync-green font-normal text-sm mb-4">Description</h4>
+        <h1 className="font-manrope font-medium text-3xl text-projsync-green mb-4">
+          {project.projectName}
+        </h1>
+        <h4 className="font-manrope text-projsync-green font-normal text-sm mb-4">
+          Description
+        </h4>
         <p className="font-poppins font-light text-gray-700 text-left text-sm/7 w-8/12 mb-4">
           {project.description}
         </p>
-        <h3 className="font-kumbh-sans text-projsync-green font-medium text-sm mb-4">Members</h3>
+        <h3 className="font-kumbh-sans text-projsync-green font-medium text-sm mb-4">
+          Members
+        </h3>
         <div className="space-y-3 mb-4">
-          <div className="flex">
-            <Image src={Image4} alt="profile" className="size-7 mr-5" />
-            <p className="font-kumbh-sans">Godwin Owusu</p>
-          </div>
-          <div className="flex">
-            <Image src={Image4} alt="profile" className="size-7 mr-5" />
-            <p className="font-kumbh-sans">Ama Abrampah</p>
-          </div>
-          <div className="flex">
-            <Image src={Image4} alt="profile" className="size-7 mr-5" />
-            <p className="font-kumbh-sans">John Teye Doku</p>
-          </div>
-          <div className="flex">
-            <Image src={Image4} alt="profile" className="size-7 mr-5" />
-            <p className="font-kumbh-sans">Prince Twumasi</p>
-          </div>
+          {project.members && project.members.length > 0 ? (
+            project.members.map((member) => (
+              <div key={member.id} className="flex">
+                <Image src={Image4} alt="profile" className="size-7 mr-5" />
+                <p className="font-kumbh-sans">
+                  {member.user.username || member.user.email}
+                </p>
+              </div>
+            ))
+          ) : (
+            <p className="text-gray-500 text-sm">No members assigned</p>
+          )}
         </div>
       </div>
     </div>

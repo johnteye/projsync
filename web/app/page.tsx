@@ -52,15 +52,15 @@ const SignIn = () => {
           <Link href="/api/auth/signin">
             <GoogleSignIn />
           </Link>
-          <div className="flex items-center my-6 w-full">
+          {/* <div className="flex items-center my-6 w-full">
             <div className="flex-grow h-px bg-gray-300"></div>
             <span className="mx-4 text-gray-500 text-sm">OR</span>
             <div className="flex-grow h-px bg-gray-300"></div>
-          </div>
-
+          </div> */}
+{/* 
           <button className="border border-projsync-green text-projsync-green text-md font-medium h-10 w-full lg:w-[88%] lg:mr-12 mb-24 rounded-md">
             Signup Now
-          </button>
+          </button> */}
         </div>
       </div>
       <div className="w-3/5 hidden lg:flex items-center justify-center bg-[#F1F3F6] ">

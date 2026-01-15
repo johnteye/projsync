@@ -4,6 +4,7 @@ import Link from "next/link";
 import { IoAddOutline } from "react-icons/io5";
 import { TeamsInfo, columns } from "@/app/components/table/columns";
 import { DataTable } from "@/app/components/table/data-table";
+import { Spinner } from "@/app/components/ui/spinner";
 
 const Teams = () => {
   const [data, setData] = useState<TeamsInfo[]>([]);
@@ -34,7 +35,7 @@ const Teams = () => {
   }, []);
 
   if (loading) {
-    return <p className="text-center py-10">Loading teams...</p>;
+    return <Spinner />;
   }
 
   return (

@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { IoAddOutline, IoSearch } from "react-icons/io5";
 import ProjectCard from "./ProjectCard";
 import Link from "next/link";
+import { Spinner } from "@/app/components/ui/spinner";
 
 type Project = {
   id: string;
@@ -66,7 +67,7 @@ const Projects = () => {
       </div>
 
       {loading ? (
-        <p>Loading projects...</p>
+        <Spinner />
       ) : error ? (
         <p className="text-red-500">{error}</p>
       ) : projects.length === 0 ? (
